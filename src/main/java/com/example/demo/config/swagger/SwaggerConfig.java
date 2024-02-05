@@ -15,7 +15,7 @@ public class SwaggerConfig {
                 .info(new Info().title("Ms-Payments")
                         .description("API Documentation")
                         .version("1.0")
-                        .contact(new Contact().name("Guido Debandi").email("guidodebandi1@gmail.com"))
+                        .contact(new Contact().name("Guido Debandi").email("gdebandi12@gmail.com"))
                         .license(new License().name("Apache 2.0").url("http://springdoc.org")));
     }
 }

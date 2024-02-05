@@ -12,10 +12,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Tag(name = "PaymentController", description = "Controller para gestionar el alta y procesamiento de ordenes de pagos")
 @RestController
@@ -46,7 +43,7 @@ public class PaymentController {
             @ApiResponse(responseCode = "500", description = "Unexpected Error", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorResponse.class)))})
 
     @PostMapping(path = PROCESS_PAYMENT)
-    public ResponseEntity<PaymentOrder> processPaymentOrder( @RequestBody PaymentOrder paymentOrder){
+    public ResponseEntity<PaymentOrder> processPaymentOrder( @PathVariable String paymentOrderId){
         return null;
     }
 }

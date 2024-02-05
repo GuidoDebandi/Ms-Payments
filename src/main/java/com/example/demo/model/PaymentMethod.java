@@ -1,12 +1,19 @@
 package com.example.demo.model;
 
 import lombok.Data;
-
-import java.util.UUID;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 @Data
+@Document
 public class PaymentMethod {
 
-    private String currency;
+    @Id
+    private String paymentMethodId;
+    private String methodName;
+    private String url;
+    private String resource;
+    private String headers;
+    private String body;
     private Boolean enabled;
-    private UUID paymentMethodId;
+
 }
