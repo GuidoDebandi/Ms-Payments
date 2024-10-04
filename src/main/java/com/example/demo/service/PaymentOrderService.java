@@ -2,8 +2,10 @@ package com.example.demo.service;
 
 import com.example.demo.model.PaymentOrder;
 
-public interface PaymentOrderService {
-    PaymentOrder createNewOrder(PaymentOrder order);
+import java.sql.SQLException;
 
-    PaymentOrder processOrder(String orderId);
+public interface PaymentOrderService {
+    PaymentOrder createNewOrder(String orderId,String methodId) throws SQLException;
+
+    void processOrders();
 }

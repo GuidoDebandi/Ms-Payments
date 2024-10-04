@@ -25,10 +25,10 @@ import java.util.UUID;
 @CrossOrigin(origins = "*")
 @RequestMapping(MethodController.URI)
 public class MethodController {
-    public static final String URI = "v1/";
+    public static final String URI = "/v1/methods";
 
-    public static final String GET_PAYMENT_METHODS = "/payment/methods/";
-    public static final String POST_PAYMENT_METHOD = "/payment/methods";
+    public static final String GET_PAYMENT_METHODS = "/";
+    public static final String POST_PAYMENT_METHOD = "/";
 
     public static final String DEACTIVATE_PAYMENT_METHOD = "/deactivate/{paymentMethodId}";
 
@@ -39,7 +39,7 @@ public class MethodController {
             @ApiResponse(responseCode = "200", description = "Successful operation", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = PaymentMethod.class))),
             @ApiResponse(responseCode = "400", description = "Bad request", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorResponse.class))),
             @ApiResponse(responseCode = "500", description = "Unexpected Error", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = ErrorResponse.class)))})
-    @GetMapping(path = POST_PAYMENT_METHOD)
+    @GetMapping(path = GET_PAYMENT_METHODS)
     public ResponseEntity<Iterable<PaymentMethod>> getPaymentMethods(){
 
         return new ResponseEntity<>(service.getMethods(), HttpStatus.OK);

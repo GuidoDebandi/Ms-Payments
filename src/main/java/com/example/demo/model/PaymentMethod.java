@@ -12,8 +12,6 @@ public class PaymentMethod {
     private String methodName;
     private String url;
     private String resource;
-    private String headers;
-    private String body;
     private Boolean enabled;
 
 }

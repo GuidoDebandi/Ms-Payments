@@ -1,12 +1,19 @@
 package com.example.demo.model;
 
+import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.UUID;
+
 @Data
+@Builder
+@Document
 public class PaymentOrder {
-    private UUID orderId;
+    @Id
+    private String paymentOrderId;
+    private String orderId;
     private Float totalAmount;
-    private String userId;
     private PaymentMethod paymentMethod;
+    private String status;
 }
